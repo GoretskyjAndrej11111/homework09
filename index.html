@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework09</title>
+</head>
+<body>
+	<script>
+		// function result(a, b) {
+		// 	return (a + b) / 2;
+		// }
+		// console.log(result(20, 30));
+
+		// const counter = function() {
+		// 	let num = 1;
+		// 	return function() {
+		// 		return num++;
+		// 	}
+		// };
+
+		// var firstCouter = counter();
+		// var secondCouter = counter();
+
+		// console.log(firstCouter());
+		// console.log(firstCouter());
+		// console.log(firstCouter());
+		// console.log(firstCouter());
+		// console.log('пробел');
+		// console.log(secondCouter());
+		// console.log(secondCouter());
+		// console.log(secondCouter());
+		// console.log(secondCouter());
+
+
+		function result() {
+            let num = 0;
+            return function(x) {
+                return num + x;
+            }
+        }
+
+        let sum = result();
+        console.log(sum(3));
+        console.log(sum(5));
+        console.log(sum(20));
+        console.log('***********************');
+
+        function counter(num, step) {
+            let count = num;
+
+            return function(reset) {
+                if(reset) {
+                    count = num;
+                    return count;
+                }
+                return count += step;
+            }
+        }
+
+        let count = counter(2, 5);
+
+        console.log(count());
+        console.log(count());
+        console.log(count());
+        count(true);
+        console.log(count());
+        console.log(count());
+        console.log(count());
+
+        console.log('***********************');
+
+        let count2 = counter(1, 2);
+        
+        console.log(count2());
+        console.log(count2());
+        console.log(count2());
+        console.log(count2());
+
+
+	</script>
+</body>
+</html>
